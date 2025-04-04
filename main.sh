@@ -12,4 +12,9 @@ detect_os() {
 }
 
 echo "You are on $(detect_os)"
-
+if command -v git &> /dev/null; then
+    echo "Git is installed: $(git --version)"
+else
+    echo "Git is not installed."
+    exit 1
+fi
