@@ -28,6 +28,7 @@ git --work-tree=$HOME --git-dir=$HOME/.dotgit reset HEAD
 git --work-tree=$HOME --git-dir=$HOME/.dotgit switch -c $HOSTNAME
 git --work-tree=$HOME --git-dir=$HOME/.dotgit -c user.name="$USER" -c user.email="${USER}@${HOSTNAME}" commit -am "Backed up pre-existing configs to local branch"
 git --work-tree=$HOME --git-dir=$HOME/.dotgit checkout main
-git pull
+
+git --work-tree=$HOME --git-dir=$HOME/.dotgit pull
 source ~/.zprofile
 install_dotfiles
