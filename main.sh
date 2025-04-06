@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [[ -z "$HOSTNAME" ]]; then
+  export HOSTNAME=$(hostname)
+fi
+
 detect_os() {
     case "$OSTYPE" in
         solaris*) echo "solaris" ;;
