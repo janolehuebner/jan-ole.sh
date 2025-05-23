@@ -23,7 +23,7 @@ else
     exit 1
 fi
 
-git clone -n --config core.bare=true --separate-git-dir=$HOME/.dotgit git@github.com:janolehuebner/dotfiles.git $(mktemp -d)
+git clone -n --config core.bare=true --separate-git-dir=$HOME/.dotgit ssh://git@git.jan-ole.cloud:2222/janolehuebner/dotfiles.git $(mktemp -d)
 git --work-tree=$HOME --git-dir=$HOME/.dotgit reset HEAD
 git --work-tree=$HOME --git-dir=$HOME/.dotgit switch -c $HOSTNAME
 git --work-tree=$HOME --git-dir=$HOME/.dotgit -c user.name="$USER" -c user.email="${USER}@${HOSTNAME}" commit -am "Backed up pre-existing configs to local branch"
